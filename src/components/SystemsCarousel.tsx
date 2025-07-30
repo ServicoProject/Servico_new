@@ -174,6 +174,16 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
           </nav>
         </div>
 
+        {/* Progress Bar */}
+        <div className="mb-8 max-w-md mx-auto">
+          <div className="w-full bg-white/20 rounded-full h-1">
+            <div 
+              className={`h-1 bg-gradient-to-r ${currentSystem.color} rounded-full transition-all duration-700 ease-out`}
+              style={{ width: `${((currentSlide + 1) / systems.length) * 100}%` }}
+            />
+          </div>
+        </div>
+
         {/* Carousel Container */}
         <div className="relative">
           {/* Navigation Arrows */}
@@ -280,16 +290,6 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="mt-6 max-w-md mx-auto">
-          <div className="w-full bg-white/20 rounded-full h-1">
-            <div 
-              className={`h-1 bg-gradient-to-r ${currentSystem.color} rounded-full transition-all duration-700 ease-out`}
-              style={{ width: `${((currentSlide + 1) / systems.length) * 100}%` }}
-            />
           </div>
         </div>
 
