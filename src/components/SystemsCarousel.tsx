@@ -217,7 +217,7 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
                     <img 
                       src="/images/pdf.png" 
                       alt="PDF Download" 
-                      className="w-6 h-6 group-hover:scale-110 transition-all duration-300"
+                      className="w-9 h-9 group-hover:scale-110 transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -252,7 +252,7 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
                   <ul className="space-y-3">
                     {currentSystem.results.map((result, index) => (
                       <li key={index} className="flex items-start group">
-                        <div className="w-2 h-2 rounded-full bg-gray-400 mr-3 mt-2 flex-shrink-0 group-hover:bg-gray-600 transition-colors" />
+                        <div className="w-2 h-2 rounded-full bg-green-500 mr-3 mt-2 flex-shrink-0 group-hover:bg-green-600 transition-colors" />
                         <span className="text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
                           {result}
                         </span>
