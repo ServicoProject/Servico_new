@@ -135,102 +135,78 @@ const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMod
             </div>
           </div>
 
-          {/* Right Side - Scrolling Phase Containers */}
-          <div className="relative h-[600px] overflow-hidden">
-            <div 
-              className="transition-transform duration-1000 ease-in-out"
-              style={{
-                transform: `translateY(-${activePhase * 100}%)`,
-                height: `${phases.length * 100}%`
-              }}
-            >
-              {phases.map((phase, index) => (
-                <div
-                  key={index}
-                  className={`h-full flex items-center justify-center p-4 transition-all duration-800 ${
-                    visiblePhases[index] 
-                      ? 'opacity-100 transform translate-x-0' 
-                      : 'opacity-0 transform translate-x-8'
-                  }`}
-                  style={{ height: `${100 / phases.length}%` }}
-                >
-                  <div className={`w-full max-w-lg p-8 rounded-2xl shadow-lg transition-all duration-500 bg-white border-2 ${
-                    activePhase === index 
-                      ? 'border-blue-500 shadow-xl transform scale-105' 
-                      : 'border-gray-200 transform scale-95 opacity-75'
+          {/* Right Side - Individual Phase Cards */}
+          <div className="space-y-8">
+            {phases.map((phase, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-800 ease-out ${
+                  visiblePhases[index] 
+                    ? 'opacity-100 transform translate-x-0' 
+                    : 'opacity-0 transform translate-x-12'
+                }`}
+              >
+                <div className={`w-full p-8 rounded-2xl shadow-lg transition-all duration-500 bg-white border-2 ${
+                  activePhase === index 
+                    ? 'border-blue-500 shadow-xl transform scale-105' 
+                    : 'border-gray-200 hover:border-gray-300 hover:shadow-xl'
+                }`}>
+                  {/* Phase Icon */}
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
+                    activePhase === index
+                      ? 'bg-gradient-to-br from-blue-600 to-purple-600 shadow-lg'
+                      : 'bg-gray-100'
                   }`}>
-                    {/* Phase Icon */}
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
-                      activePhase === index
-                        ? 'bg-gradient-to-br from-blue-600 to-purple-600 shadow-lg'
-                        : 'bg-gray-100'
-                    }`}>
-                      <phase.icon className={`w-8 h-8 transition-colors duration-500 ${
-                        activePhase === index ? 'text-white' : 'text-gray-600'
-                      }`} />
+                    <phase.icon className={`w-8 h-8 transition-colors duration-500 ${
+                      activePhase === index ? 'text-white' : 'text-gray-600'
+                    }`} />
+                  </div>
+
+                  {/* Phase Content */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-black">
+                          {phase.phase}
+                        </h3>
+                        <h4 className="text-xl font-semibold text-gray-700 mt-1">
+                          {phase.title}
+                        </h4>
+                      </div>
+                      <span className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 ${
+                        activePhase === index
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-gray-100 text-gray-600'
+                      }`}>
+                        {phase.duration}
+                      </span>
                     </div>
+                    
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      {phase.description}
+                    </p>
 
-                    {/* Phase Content */}
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-black">
-                            {phase.phase}
-                          </h3>
-                          <h4 className="text-xl font-semibold text-gray-700 mt-1">
-                            {phase.title}
-                          </h4>
-                        </div>
-                        <span className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 ${
-                          activePhase === index
-                            ? 'bg-blue-100 text-blue-700'
-                            : 'bg-gray-100 text-gray-600'
-                        }`}>
-                          {phase.duration}
-                        </span>
+                    {/* Progress Indicator */}
+                    <div className="flex items-center space-x-2 pt-4">
+                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                        <div 
+                          className={`h-2 rounded-full transition-all duration-1000 ${
+                            activePhase === index
+                              ? 'bg-gradient-to-r from-blue-600 to-purple-600 w-full'
+                              : activePhase > index
+                                ? 'bg-green-500 w-full'
+                                : 'bg-gray-300 w-0'
+                          }`}
+                        />
                       </div>
-                      
-                      <p className="text-gray-700 text-lg leading-relaxed">
-                        {phase.description}
-                      </p>
-
-                      {/* Progress Indicator */}
-                      <div className="flex items-center space-x-2 pt-4">
-                        <div className="flex-1 bg-gray-200 rounded-full h-2">
-                          <div 
-                            className={`h-2 rounded-full transition-all duration-1000 ${
-                              activePhase === index
-                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 w-full'
-                                : activePhase > index
-                                  ? 'bg-green-500 w-full'
-                                  : 'bg-gray-300 w-0'
-                            }`}
-                          />
-                        </div>
-                        <span className="text-sm text-gray-500 font-medium">
-                          {activePhase > index ? 'Complete' : activePhase === index ? 'In Progress' : 'Upcoming'}
-                        </span>
-                      </div>
+                      <span className="text-sm text-gray-500 font-medium">
+                        {activePhase > index ? 'Complete' : activePhase === index ? 'In Progress' : 'Upcoming'}
+                      </span>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Scroll Indicators */}
-            <div className="absolute right-0 top-1/2 transform translate-x-8 -translate-y-1/2 flex flex-col space-y-4">
-              {phases.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActivePhase(index)}
-                  className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                    activePhase === index
-                      ? 'bg-blue-600 border-blue-600 scale-125'
-                      : 'bg-transparent border-gray-400 hover:border-blue-600'
-                  }`}
-                />
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
