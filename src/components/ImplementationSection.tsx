@@ -7,6 +7,8 @@ interface ImplementationSectionProps {
 
 const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMode }) => {
   const [activePhase, setActivePhase] = useState(0);
+  const [visiblePhases, setVisiblePhases] = useState<boolean[]>([false, false, false]);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const phases = [
     {
@@ -35,6 +37,45 @@ const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMod
     }
   ];
 
+  // Sequential animation trigger
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            
+            // Phase 1 appears immediately
+            setTimeout(() => {
+              setVisiblePhases(prev => [true, prev[1], prev[2]]);
+            }, 0);
+            
+            // Phase 2 appears after 1.5 seconds
+            setTimeout(() => {
+              setVisiblePhases(prev => [prev[0], true, prev[2]]);
+            }, 1500);
+            
+            // Phase 3 appears after 3 seconds
+            setTimeout(() => {
+              setVisiblePhases(prev => [prev[0], prev[1], true]);
+            }, 3000);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById('implementation-section');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, [hasAnimated]);
   // Auto-scroll effect
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,7 +86,7 @@ const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMod
   }, [phases.length]);
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section id="implementation-section" className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center mb-12">
@@ -106,7 +147,11 @@ const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMod
               {phases.map((phase, index) => (
                 <div
                   key={index}
-                  className="h-full flex items-center justify-center p-4"
+                  className={`h-full flex items-center justify-center p-4 transition-all duration-800 ${
+                    visiblePhases[index] 
+                      ? 'opacity-100 transform translate-x-0' 
+                      : 'opacity-0 transform translate-x-8'
+                  }`}
                   style={{ height: `${100 / phases.length}%` }}
                 >
                   <div className={`w-full max-w-lg p-8 rounded-2xl shadow-lg transition-all duration-500 bg-white border-2 ${
@@ -191,7 +236,9 @@ const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMod
 
         {/* Bottom Summary */}
         <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg border border-gray-200">
+          <div className={`bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg border border-gray-200 transition-all duration-1000 delay-[3500ms] ${
+            hasAnimated ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
             <h3 className="text-2xl font-bold text-black mb-4">
               Complete Transformation in 90 Days
             </h3>
