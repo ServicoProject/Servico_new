@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Settings, Users, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Phone, Settings, Users, ArrowRight, ChevronLeft, ChevronRight, FileText } from 'lucide-react';
 
 interface SystemsCarouselProps {
   onBookingClick: () => void;
@@ -174,16 +174,6 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
           </nav>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8 max-w-md mx-auto">
-          <div className="w-full bg-white/20 rounded-full h-1">
-            <div 
-              className={`h-1 bg-gradient-to-r ${currentSystem.color} rounded-full transition-all duration-700 ease-out`}
-              style={{ width: `${((currentSlide + 1) / systems.length) * 100}%` }}
-            />
-          </div>
-        </div>
-
         {/* Carousel Container */}
         <div className="relative">
           {/* Navigation Arrows */}
@@ -222,14 +212,15 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
                   </p>
                 </div>
                 <div className="ml-auto">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-lg transition-all duration-300 group cursor-pointer"
-                       title={`Download ${currentSystem.title} PDF`}>
-                    <img 
-                      src="/images/pdf.png" 
-                      alt="PDF Download" 
-                      className="w-9 h-9 group-hover:scale-110 transition-all duration-300"
-                    />
-                  </div>
+                  <a
+                    href={`/pdfs/${currentSystem.title.toLowerCase().replace(/\s+/g, '-')}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-lg transition-all duration-300 group"
+                    title={`Download ${currentSystem.title} PDF`}
+                  >
+                    <FileText className="w-6 h-6 text-gray-600 group-hover:text-gray-800 group-hover:scale-110 transition-all duration-300" />
+                  </a>
                 </div>
               </div>
 
@@ -262,7 +253,7 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
                   <ul className="space-y-3">
                     {currentSystem.results.map((result, index) => (
                       <li key={index} className="flex items-start group">
-                        <div className="w-2 h-2 rounded-full bg-green-500 mr-3 mt-2 flex-shrink-0 group-hover:bg-green-600 transition-colors" />
+                        <ArrowRight className="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-gray-400 group-hover:text-gray-600 transition-colors" />
                         <span className="text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
                           {result}
                         </span>
@@ -290,6 +281,16 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mt-6 max-w-md mx-auto">
+          <div className="w-full bg-white/20 rounded-full h-1">
+            <div 
+              className={`h-1 bg-gradient-to-r ${currentSystem.color} rounded-full transition-all duration-700 ease-out`}
+              style={{ width: `${((currentSlide + 1) / systems.length) * 100}%` }}
+            />
           </div>
         </div>
 
