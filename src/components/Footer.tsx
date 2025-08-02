@@ -279,44 +279,23 @@ const Footer = () => {
 
               {/* Social Media & Get Started */}
               <div>
-                <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif" }}>
-                  Ready to Transform Your Practice?
-                </h3>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Schedule Your Free Discovery Call</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Download className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Download Our System Proposals</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <FileText className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Take Our AI Readiness Assessment</span>
-                  </div>
-                </div>
-
                 {/* Social Links */}
-                <div>
-                  <h4 className="text-white font-semibold mb-4">Connect With Us</h4>
-                  <div className="flex items-center space-x-4">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.href}
-                        className="w-10 h-10 bg-gray-900 border border-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 hover:border-gray-600 transition-all duration-300"
-                        aria-label={social.label}
-                      >
-                        <social.icon className="w-5 h-5" />
-                      </a>
-                    ))}
-                  </div>
-                  <p className="text-gray-400 text-sm mt-3">
-                    Follow for AI implementation tips, industry insights, and client success stories.
-                  </p>
+                <h4 className="text-white font-semibold mb-4">Connect With Us</h4>
+                <div className="flex items-center space-x-4 mb-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      className="w-10 h-10 bg-gray-900 border border-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 hover:border-gray-600 transition-all duration-300"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </a>
+                  ))}
                 </div>
+                <p className="text-gray-400 text-sm">
+                  Follow for AI implementation tips, industry insights, and client success stories.
+                </p>
               </div>
             </div>
           </div>
