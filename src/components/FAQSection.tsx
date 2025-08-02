@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, HelpCircle, Calendar, Download, ArrowRight } from 'lucide-react';
 
 interface FAQSectionProps {
   isDarkMode: boolean;
@@ -325,20 +325,38 @@ const FAQSection: React.FC<FAQSectionProps> = ({ isDarkMode }) => {
           ))}
         </div>
 
-        {/* Featured Section */}
+        {/* Combined CTA Section */}
         <div className="mt-16">
           <div className="bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-blue-900/20 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <div className="text-center">
+            <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Still Have Questions?
               </h3>
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
                 Our AI strategy experts are ready to discuss your specific needs and provide personalized answers to help you make the best decision for your practice.
               </p>
-              <button className="btn-primary group">
-                <HelpCircle className="w-5 h-5 mr-2" />
-                Schedule a Free Consultation
-              </button>
+            </div>
+            
+            <div className="border-t border-white/10 pt-8">
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif" }}>
+                  Don't Let Competitors Gain the AI Advantage
+                </h3>
+                <p className="text-gray-300 mb-6 max-w-3xl mx-auto">
+                  Over 73% of professional services firms plan to implement AI within 12 months. The question isn't whether AI will transform your industry—it's whether you'll lead or follow.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                  <button className="btn-primary group">
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Schedule Free Discovery Call
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button className="btn-secondary group">
+                    <Download className="w-5 h-5 mr-2" />
+                    Download System Proposals
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
