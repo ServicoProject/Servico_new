@@ -3,8 +3,6 @@ import { ArrowRight, Zap, TrendingUp } from 'lucide-react';
 
 interface HeroProps {
   onBookingClick: () => void;
-  isDarkMode: boolean;
-}
 
 const Hero: React.FC<HeroProps> = ({ onBookingClick, isDarkMode }) => {
   return (
