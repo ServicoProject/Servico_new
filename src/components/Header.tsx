@@ -27,6 +27,7 @@ const Header: React.FC<HeaderProps> = ({ onBookingClick, isDarkMode, activeSyste
         { name: 'Client Acquisition Engine', action: () => handleSystemClick(1) },
         { name: 'Operations Automation Hub', action: () => handleSystemClick(2) },
         { name: 'Client Success Platform', action: () => handleSystemClick(3) },
+        { name: 'Ad-hoc & Other AI Services', action: () => scrollToSection('adhoc-services-section') },
         { name: 'Implementation Process', action: () => scrollToSection('implementation-section') },
         { name: 'Why Choose Us', action: () => scrollToSection('why-choose-section') }
       ]
@@ -101,7 +102,7 @@ const Header: React.FC<HeaderProps> = ({ onBookingClick, isDarkMode, activeSyste
           <div className="flex-1 flex justify-end">
             <button
               onClick={onBookingClick}
-              className="btn-primary group"
+              className="btn-primary group btn-hover-effect"
             >
               <Calendar className="w-5 h-5 mr-2" />
               AI Strategy Session
