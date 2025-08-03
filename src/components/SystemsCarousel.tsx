@@ -137,7 +137,7 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
   const currentSystem = systems[currentSlide];
 
   return (
-    <section className="py-12 bg-black relative overflow-hidden">
+    <section id="systems-section" className="py-12 bg-black relative overflow-hidden">
       {/* Background gradient animation */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-black to-gray-800/20 transition-all duration-1000 ease-in-out" />
@@ -183,25 +183,25 @@ const SystemsCarousel: React.FC<SystemsCarouselProps> = ({ onBookingClick, isDar
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full p-3 transition-all duration-300 group"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full p-2 transition-all duration-300 group"
             aria-label="Previous system"
           >
-            <ChevronLeft className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+            <ChevronLeft className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full p-3 transition-all duration-300 group"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full p-2 transition-all duration-300 group"
             aria-label="Next system"
           >
-            <ChevronRight className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+            <ChevronRight className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
           </button>
 
           {/* Main Carousel Content */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out">
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out mx-8">
             <div className={`h-2 bg-gradient-to-r ${currentSystem.color} transition-all duration-700`} />
             
-            <div className="p-8 md:p-12 bg-gray-900">
+            <div className="p-6 md:p-8 bg-gray-900">
               {/* Header */}
               <div className="flex items-center mb-8">
                 <div className={`flex-shrink-0 w-16 h-16 rounded-xl flex items-center justify-center mr-6 bg-gradient-to-br ${currentSystem.color} shadow-lg`}>

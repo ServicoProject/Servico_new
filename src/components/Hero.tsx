@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onBookingClick, isDarkMode }) => {
   return (
-    <section className="pt-32 pb-12 relative overflow-hidden bg-black">
+    <section id="hero-section" className="pt-32 pb-12 relative overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black to-gray-900/20"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">

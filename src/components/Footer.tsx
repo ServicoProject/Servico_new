@@ -86,7 +86,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black border-t border-gray-800 relative overflow-hidden">
+    <footer id="footer-section" className="bg-black border-t border-gray-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900/10 via-black to-gray-800/10"></div>

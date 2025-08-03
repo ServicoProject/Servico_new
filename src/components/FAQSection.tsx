@@ -224,7 +224,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ isDarkMode }) => {
   const filteredFAQs = faqData.filter(faq => faq.category === activeCategory);
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section id="faq-section" className="py-20 bg-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/5 via-purple-900/5 to-transparent"></div>
@@ -276,8 +276,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ isDarkMode }) => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center space-x-2 ${
                   activeCategory === category.id
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                    ? 'bg-white text-black shadow-lg shadow-white/25 transform scale-105'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white hover:scale-105'
                 }`}
               >
                 <category.icon className="w-4 h-4" />
