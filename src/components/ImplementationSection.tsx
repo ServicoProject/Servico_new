@@ -182,15 +182,15 @@ const ImplementationSection: React.FC<ImplementationSectionProps> = ({ isDarkMod
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white mb-2">389%</div>
-                  <div className="text-gray-400 text-sm">ROI Achievement</div>
+                  <div className="text-gray-400 text-sm" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>ROI Achievement</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white mb-2">9 Days</div>
-                  <div className="text-gray-400 text-sm">Payback Period</div>
+                  <div className="text-gray-400 text-sm" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>Payback Period</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white mb-2">60%</div>
-                  <div className="text-gray-400 text-sm">Time Reduction</div>
+                  <div className="text-gray-400 text-sm" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>Time Reduction</div>
                 </div>
               </div>
             </div>

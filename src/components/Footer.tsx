@@ -333,10 +333,10 @@ const Footer = () => {
         {/* Legal Footer */}
         <div className="py-8 border-t border-gray-800">
           <div className="text-center mb-6">
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-gray-400 text-sm mb-4" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
               © 2025 Serviqo. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center items-center space-x-6 text-gray-400 text-sm">
+            <div className="flex flex-wrap justify-center items-center space-x-6 text-gray-400 text-sm" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
               <span>Results may vary based on implementation</span>
               <span>•</span>
               <span>ROI calculations based on documented case studies</span>
@@ -346,7 +346,7 @@ const Footer = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-gray-400 text-xs max-w-4xl mx-auto leading-relaxed">
+            <p className="text-gray-400 text-xs max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
               This website and our services comply with all applicable professional services regulations including state bar association rules, 
               CPA professional standards, and federal compliance requirements. Your privacy is protected under our comprehensive Privacy Policy. 
               We use cookies to enhance your experience and never share personal information with third parties.

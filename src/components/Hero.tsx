@@ -35,16 +35,16 @@ const Hero: React.FC<HeroProps> = ({ onBookingClick, isDarkMode }) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-white transition-colors duration-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>60s</div>
-              <div className="text-white transition-colors duration-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>Lead Response Time</div>
+              <div className="text-3xl font-bold mb-2 text-white transition-colors duration-300">60s</div>
+              <div className="text-white transition-colors duration-300">Lead Response Time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-white transition-colors duration-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>200-400%</div>
-              <div className="text-white transition-colors duration-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>Conversion Improvement</div>
+              <div className="text-3xl font-bold mb-2 text-white transition-colors duration-300">200-400%</div>
+              <div className="text-white transition-colors duration-300">Conversion Improvement</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-white transition-colors duration-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>$50K-150K</div>
-              <div className="text-white transition-colors duration-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>Additional Annual Revenue</div>
+              <div className="text-3xl font-bold mb-2 text-white transition-colors duration-300">$50K-150K</div>
+              <div className="text-white transition-colors duration-300">Additional Annual Revenue</div>
             </div>
           </div>
         </div>

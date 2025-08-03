@@ -306,7 +306,7 @@ const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ isDarkMode }) =
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Collective Impact Across Studies
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
                   Combined results from leading research institutions and industry leaders
                 </p>
               </div>
@@ -331,7 +331,7 @@ const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ isDarkMode }) =
                     <div className="text-2xl font-bold text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-gray-400 text-sm" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
                       {stat.label}
                     </div>
                   </div>
