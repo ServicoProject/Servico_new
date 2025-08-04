@@ -119,9 +119,6 @@ const Footer = () => {
                 <h3 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif" }}>
                   Serviqo
                 </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Transforming Professional Services Through AI Innovation
-                </p>
                 
                 {/* Contact Information */}
                 <div className="space-y-4">
@@ -255,7 +252,7 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
-                    className="btn-primary px-6 py-3 whitespace-nowrap btn-hover-effect"
+                    className="btn-primary px-6 py-3 whitespace-nowrap"
                     disabled={isSubscribed}
                   >
                     {isSubscribed ? (
@@ -333,10 +330,10 @@ const Footer = () => {
         {/* Legal Footer */}
         <div className="py-8 border-t border-gray-800">
           <div className="text-center mb-6">
-            <p className="text-gray-400 text-sm mb-4" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
+            <p className="text-gray-400 text-sm mb-4">
               © 2025 Serviqo. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center items-center space-x-6 text-gray-400 text-sm" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
+            <div className="flex flex-wrap justify-center items-center space-x-6 text-gray-400 text-sm">
               <span>Results may vary based on implementation</span>
               <span>•</span>
               <span>ROI calculations based on documented case studies</span>
@@ -346,7 +343,7 @@ const Footer = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-gray-400 text-xs max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif" }}>
+            <p className="text-gray-400 text-xs max-w-4xl mx-auto leading-relaxed">
               This website and our services comply with all applicable professional services regulations including state bar association rules, 
               CPA professional standards, and federal compliance requirements. Your privacy is protected under our comprehensive Privacy Policy. 
               We use cookies to enhance your experience and never share personal information with third parties.
